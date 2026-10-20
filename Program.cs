@@ -50,17 +50,22 @@ internal class Program
         //● Price → the unit price
         //● StockStatus → a string: "Available" if UnitsInStock > 0, otherwise "Out of Stock"
         //● Print the result.
-        var filteredProduct = ProductList.Select(p => new { p.ProductName, p.UnitPrice, 
-            StockStatus =  p.UnitsInStock > 0 ? "Available" : "Out of Stock" });
-        foreach (var product in filteredProduct)
-        {
-            Console.WriteLine(product);
-        }
+        //var filteredProduct = ProductList.Select(p => new { p.ProductName, p.UnitPrice, 
+        //    StockStatus =  p.UnitsInStock > 0 ? "Available" : "Out of Stock" });
+        //foreach (var product in filteredProduct)
+        //{
+        //    Console.WriteLine(product);
+        //}
         #endregion
 
 
         #region Q6
         //6.Print each product's name along with its position (1 - based) in the list. Expected format: 1.Chai, 2. Chang, etc.
+        var ProductWithIndex = ProductList.Select((p,index) => $"{index+1} - {p.ProductName}");
+        foreach (var product in ProductWithIndex)
+        {
+            Console.WriteLine(product);
+        }
         #endregion
 
     }
