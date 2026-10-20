@@ -36,11 +36,11 @@ internal class Program
 
         #region Q4
         //4.Get all products that are in stock(UnitsInStock > 0) and belong to the "Condiments" category.
-        var filteredProduct = ProductList.Where(p => p.UnitPrice > 0 && p.Category.Contains("Condiments"));
-        foreach (var product in filteredProduct)
-        {
-            Console.WriteLine(product);
-        }
+        //var filteredProduct = ProductList.Where(p => p.UnitPrice > 0 && p.Category.Contains("Condiments"));
+        //foreach (var product in filteredProduct)
+        //{
+        //    Console.WriteLine(product);
+        //}
         #endregion
 
 
@@ -50,6 +50,12 @@ internal class Program
         //● Price → the unit price
         //● StockStatus → a string: "Available" if UnitsInStock > 0, otherwise "Out of Stock"
         //● Print the result.
+        var filteredProduct = ProductList.Select(p => new { p.ProductName, p.UnitPrice, 
+            StockStatus =  p.UnitsInStock > 0 ? "Available" : "Out of Stock" });
+        foreach (var product in filteredProduct)
+        {
+            Console.WriteLine(product);
+        }
         #endregion
 
 
