@@ -27,15 +27,20 @@ internal class Program
 
         #region Q3
         //3.Get all products where UnitPrice is between 10 $ 30
-        var filtredProducts = ProductList.Where(p => p.UnitPrice >= 10 && p.UnitPrice <=30);
-        foreach (var product in filtredProducts)
-        {
-            Console.WriteLine(product);
-        }
+        //var filtredProducts = ProductList.Where(p => p.UnitPrice >= 10 && p.UnitPrice <=30);
+        //foreach (var product in filtredProducts)
+        //{
+        //    Console.WriteLine(product);
+        //}
         #endregion
 
         #region Q4
         //4.Get all products that are in stock(UnitsInStock > 0) and belong to the "Condiments" category.
+        var filteredProduct = ProductList.Where(p => p.UnitPrice > 0 && p.Category.Contains("Condiments"));
+        foreach (var product in filteredProduct)
+        {
+            Console.WriteLine(product);
+        }
         #endregion
 
 
