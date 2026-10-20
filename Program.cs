@@ -8,16 +8,21 @@ internal class Program
     {
         #region Q1
         //1.Get all products from the "Seafood" category.Print each product's name and price. 
-        var allProducts = ProductList.Select(p => new { p.ProductName, p.UnitPrice });
-        foreach (var product in allProducts)
-        {
-            Console.WriteLine(product);
-        }
+        //var allProducts = ProductList.Select(p => new { p.ProductName, p.UnitPrice });
+        //foreach (var product in allProducts)
+        //{
+        //    Console.WriteLine(product);
+        //}
         #endregion
 
 
         #region Q2
         //2.Get a list of only the product names from ProductList.Print each name.
+        var ProductNames = ProductList.Select(p => p.ProductName);
+        foreach (var product in ProductNames)
+        {
+            Console.WriteLine(product);
+        }
         #endregion
 
         #region Q3
