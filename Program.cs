@@ -18,15 +18,20 @@ internal class Program
 
         #region Q2
         //2.Get a list of only the product names from ProductList.Print each name.
-        var ProductNames = ProductList.Select(p => p.ProductName);
-        foreach (var product in ProductNames)
-        {
-            Console.WriteLine(product);
-        }
+        //var ProductNames = ProductList.Select(p => p.ProductName);
+        //foreach (var product in ProductNames)
+        //{
+        //    Console.WriteLine(product);
+        //}
         #endregion
 
         #region Q3
-        //3.Get all products where UnitPrice is between 10 30
+        //3.Get all products where UnitPrice is between 10 $ 30
+        var filtredProducts = ProductList.Where(p => p.UnitPrice >= 10 && p.UnitPrice <=30);
+        foreach (var product in filtredProducts)
+        {
+            Console.WriteLine(product);
+        }
         #endregion
 
         #region Q4
